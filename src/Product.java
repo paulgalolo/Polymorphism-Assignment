@@ -41,7 +41,7 @@ public class Product implements Category, PasswordLockeable, Comparable {
         if (!isLocked()) {
             this.description = description;
         } else
-            System.out.print("Record LOCKED, Unable to update");
+            System.out.println("Record LOCKED, Unable to update");
     }
 
     public double getPrice() {
@@ -52,12 +52,12 @@ public class Product implements Category, PasswordLockeable, Comparable {
         if (!isLocked()) {
             this.price = price;
         } else
-            System.out.print("Record LOCKED, Unable to update");
+            System.out.println("Record LOCKED, Unable to update");
     }
 
-    public void ProductPassword(String password) { // Only mutator
-        this.password = password;
-    }
+    //public void ProductPassword(String password) { // Only mutator
+    //    this.password = password;
+    //}
 
     public boolean isProductLocked() {
         return productIsLocked;
