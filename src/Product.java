@@ -1,4 +1,6 @@
-public class Product implements Category, PasswordLockeable {
+import java.util.Objects;
+
+public class Product implements Category, PasswordLockeable, Comparable {
     private String productCode;
     private String description;
     private double price;
@@ -28,7 +30,7 @@ public class Product implements Category, PasswordLockeable {
         if (!isLocked()) {
             this.productCode = productCode;
         } else
-            System.out.print("Error");
+            System.out.println("Record LOCKED, Unable to update");
     }
 
     public String getDescription() {
@@ -39,7 +41,7 @@ public class Product implements Category, PasswordLockeable {
         if (!isLocked()) {
             this.description = description;
         } else
-            System.out.print("Error");
+            System.out.print("Record LOCKED, Unable to update");
     }
 
     public double getPrice() {
@@ -49,19 +51,17 @@ public class Product implements Category, PasswordLockeable {
     public void setPrice(double price) {
         if (!isLocked()) {
             this.price = price;
-            System.out.print("Success!");
         } else
-            System.out.print("Error");
+            System.out.print("Record LOCKED, Unable to update");
     }
 
-    public void setPassword(String password) { // Only mutator
+    public void ProductPassword(String password) { // Only mutator
         this.password = password;
     }
 
-    public boolean isProductIsLocked() {
+    public boolean isProductLocked() {
         return productIsLocked;
     }
-
 
     // Convert Category
     public String convertCategory(int category) {
@@ -90,25 +90,44 @@ public class Product implements Category, PasswordLockeable {
         return convertCategory(this.category);
     }
 
-    // "PasswordLockable" methods via interface
-    @Override
-    public void setPassword() {
+     /* PasswordLockable methods via interface */
 
+    // Lets user set up the password
+    @Override
+    public void setPassword(String setPassword) {
+        this.password = setPassword;
+        System.out.println("Password has been set up");
     }
 
+    // Unlocks the product
     @Override
-    public void Unlock() {
-        this.productIsLocked = false;
+    public void Unlock(String passwordUnlock) {
+        if (Objects.equals(this.password, passwordUnlock)) {
+            this.productIsLocked = false;
+            System.out.println("Product is Unlocked");
+        }
+    }
+    // Locks the product
+    @Override
+    public void Lock(String passwordLock) {
+        if (Objects.equals(this.password, passwordLock)) {
+            this.productIsLocked = true;
+            System.out.println("Product is Locked");
+
+        }
     }
 
-    @Override
-    public void Lock() {
-        this.productIsLocked = true;
-    }
-
+    // Returns a value of true and false depending on if Product is locked or not
     @Override
     public boolean isLocked() {
-        return isProductIsLocked();
+        return isProductLocked();
+    }
+
+    /* Comparable method */
+
+    @Override
+    public void compareTo() {
+
     }
 
     // ToString() method
@@ -119,5 +138,4 @@ public class Product implements Category, PasswordLockeable {
                 " Description: " + getDescription() +
                 " Category: " + getCategory();
     }
-
 }
