@@ -24,8 +24,15 @@ public class Driver {
         // First Product Record
         System.out.println(P[0].toString());
 
+        // Unlocking the Product
+        P[0].Unlock("XYZ");
+
         // Unlock the first product using wrong password
         P[0].setPrice(19.98);
+
+        // Updated Record
+        System.out.println(P[0].toString());
+
 
 
     }
