@@ -31,9 +31,6 @@ public class Driver {
         P[0].setPrice(19.98);
 
         // Updated Record
-        System.out.println(P[0].toString());
-
-
-
+        //System.out.println(P[0].toString());
     }
 }

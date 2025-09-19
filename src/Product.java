@@ -105,7 +105,8 @@ public class Product implements Category, PasswordLockeable, Comparable {
         if (Objects.equals(this.password, passwordUnlock)) {
             this.productIsLocked = false;
             System.out.println("Product is Unlocked");
-        }
+        } else
+            System.out.println("Wrong password");
     }
     // Locks the product
     @Override
@@ -113,8 +114,8 @@ public class Product implements Category, PasswordLockeable, Comparable {
         if (Objects.equals(this.password, passwordLock)) {
             this.productIsLocked = true;
             System.out.println("Product is Locked");
-
-        }
+        } else
+            System.out.println("Wrong password");
     }
 
     // Returns a value of true and false depending on if Product is locked or not
