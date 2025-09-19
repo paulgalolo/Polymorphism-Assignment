@@ -10,4 +10,6 @@ public interface Category {
     int Dairy = 2;
     int Fruits = 3;
     int Vegetables = 4;
+
+    // Testing Git
 }
