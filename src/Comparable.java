@@ -1,3 +1,3 @@
 public interface Comparable {
-    void compareTo();
+    void compareTo(Product P[]);
 }
