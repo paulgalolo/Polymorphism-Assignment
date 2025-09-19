@@ -127,8 +127,16 @@ public class Product implements Category, PasswordLockeable, Comparable {
     /* Comparable method */
 
     @Override
-    public void compareTo() {
+    public void compareTo(Product[] P) {
+        double lowest = P[0].getPrice();
+        double second_lowest = Double.MAX_VALUE;
 
+        for (int i = 0; i < P.length-1; i++) {
+            if (P[i].getPrice() < lowest) {
+                lowest = P[i].getPrice();
+
+            }
+        }
     }
 
     // ToString() method
