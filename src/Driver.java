@@ -16,26 +16,27 @@ public class Driver {
             System.out.println(x);
         }
 
-        //// Setup password
-        //P[0].setPassword("XYZ");
-        //
-        //// Lock the product
-        //P[0].Lock("XYZ");
-        //
-        //// First Product Record
-        //System.out.println(P[0].toString());
-        //
-        //// Unlocking the Product
-        //P[0].Unlock("XYZ");
-        //
-        //// Unlock the first product using wrong password
-        //P[0].setPrice(19.98);
-        //
-        //// Updated Record
-        //System.out.println(P[0].toString());
+        // Setup password
+        P[0].setPassword("XYZ");
+
+        // Lock the product
+        P[0].Lock("XYZ");
+
+        // First Product Record
+        System.out.println(P[0].toString());
+
+        // Unlocking the Product
+        P[0].Unlock("XYZ");
+
+        // Unlock the first product using wrong password
+        P[0].setPrice(19.98);
+
+        // Updated Record
+        System.out.println(P[0].toString());
 
 
-        Product productInstance = new Product(); // Required to call your instance method
+        // Outputting two cheapest items
+        Product productInstance = new Product();
         Product[] lowest = productInstance.compareTo(P);
 
         System.out.println("\nTwo lowest-priced products:");
