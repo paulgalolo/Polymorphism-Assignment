@@ -1,5 +1,5 @@
 // Driver.java
-// Paul Galolo / T00766448
+// Paul Galolo
 // COMP 1231 Assignment 1
 
 // This program creates an array of products with different names, prices, and categories.
