@@ -11,7 +11,7 @@ public class Product implements Category, PasswordLockeable, Comparable {
     // Parameterized Constructor
     public Product(String productCode, String Description, double price, int category) {
         setProductCode(productCode);
-        setPrice(price);
+        this.price = price;
         setDescription(Description);
         setCategory(category);
     }
@@ -51,13 +51,10 @@ public class Product implements Category, PasswordLockeable, Comparable {
     public void setPrice(double price) {
         if (!isLocked()) {
             this.price = price;
+            System.out.println("Update Success");
         } else
             System.out.println("Record LOCKED, Unable to update");
     }
-
-    //public void ProductPassword(String password) { // Only mutator
-    //    this.password = password;
-    //}
 
     public boolean isProductLocked() {
         return productIsLocked;
@@ -124,8 +121,7 @@ public class Product implements Category, PasswordLockeable, Comparable {
         return isProductLocked();
     }
 
-    /* Comparable method */
-
+    // Method to find the two cheapest items in the array
     @Override
     public Product[] compareTo(Product[] P) {
         Product firstMin = null;
