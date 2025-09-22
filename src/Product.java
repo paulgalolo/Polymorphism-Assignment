@@ -21,11 +21,14 @@ public class Product implements Category, PasswordLockeable, Comparable {
 
     }
 
-    // Product Accessor and Mutator
+    /*  Product Accessor and Mutator */
+
+    // Accessor for Product Code
     public String getProductCode() {
         return productCode;
     }
 
+    // Mutator for Product Code
     public void setProductCode(String productCode) {
         if (!isLocked()) {
             this.productCode = productCode;
@@ -33,10 +36,12 @@ public class Product implements Category, PasswordLockeable, Comparable {
             System.out.println("Record LOCKED, Unable to update");
     }
 
+    // Accessor for description
     public String getDescription() {
         return description;
     }
 
+    // Mutator for Description
     public void setDescription(String description) {
         if (!isLocked()) {
             this.description = description;
@@ -44,10 +49,12 @@ public class Product implements Category, PasswordLockeable, Comparable {
             System.out.println("Record LOCKED, Unable to update");
     }
 
+    // Accessor for Price
     public double getPrice() {
         return price;
     }
 
+    // Mutator for Price
     public void setPrice(double price) {
         if (!isLocked()) {
             this.price = price;
@@ -56,6 +63,7 @@ public class Product implements Category, PasswordLockeable, Comparable {
             System.out.println("Record LOCKED, Unable to update");
     }
 
+    // Accessor to check if product is locked
     public boolean isProductLocked() {
         return productIsLocked;
     }
@@ -87,7 +95,7 @@ public class Product implements Category, PasswordLockeable, Comparable {
         return convertCategory(this.category);
     }
 
-     /* PasswordLockable methods via interface */
+    /* PasswordLockable methods via interface */
 
     // Lets user set up the password
     @Override
@@ -105,6 +113,7 @@ public class Product implements Category, PasswordLockeable, Comparable {
         } else
             System.out.println("Wrong password");
     }
+
     // Locks the product
     @Override
     public void Lock(String passwordLock) {
@@ -135,7 +144,6 @@ public class Product implements Category, PasswordLockeable, Comparable {
                 secondMin = p;
             }
         }
-
         return new Product[]{firstMin, secondMin};
     }
 
