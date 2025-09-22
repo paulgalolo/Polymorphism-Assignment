@@ -4,14 +4,16 @@ public class Driver {
         Product p = new Product();
         Product[] P = new Product[6];
 
-        P[0] = new Product("F001", "Beef Steak", 12.99, Category.Meat);
+        P[0] = new Product("XXXX", "Xbox Series X", 560.23, Category.UNCLASSIFIED);
         P[1] = new Product("F002", "Cheddar Cheese", 5.49, Category.Dairy);
-        P[2] = new Product("F003", "Apple", 0.01, Category.Fruits);
-        P[3] = new Product("F004", "Carrot", 0.79, Category.Vegetables);
-        P[4] = new Product("F005", "Chicken Breast", 0.12, Category.Meat);
-        P[5] = new Product("F006", "Milk", 0.0001, Category.Dairy);
+        P[2] = new Product("F003", "Apple", 14.56, Category.Fruits);
+        P[3] = new Product("F004", "Carrot", 12.24, Category.Vegetables);
+        P[4] = new Product("F005", "Chicken Breast", 10.99, Category.Meat);
+        P[5] = new Product("F006", "Milk", 10.01, Category.Dairy);
 
-        // Output results
+        /* TEST CODES */
+
+        // Output Array
         for (Product x : P) {
             System.out.println(x);
         }
@@ -33,7 +35,6 @@ public class Driver {
 
         // Updated Record
         System.out.println(P[0].toString());
-
 
         // Outputting two cheapest items
         Product productInstance = new Product();
