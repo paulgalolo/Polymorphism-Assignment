@@ -1,3 +1,12 @@
+// Driver.java
+// Paul Galolo / T00766448
+// COMP 1231 Assignment 1
+
+// This program creates an array of products with different names, prices, and categories.
+// It prints all products, sets a password for the first product to lock and unlock it,
+// attempts a price update, and displays the updated record.
+// Finally, it identifies and prints the two lowest-priced products,
+// demonstrating product management and simple comparison logic.
 public class Driver {
     public static void main(String[] args) {
 
@@ -28,6 +37,7 @@ public class Driver {
         System.out.println(P[0].toString());
 
         // Unlocking the Product
+        // Input wrong password to show error message
         P[0].Unlock("XYZ");
 
         // Unlock the first product using wrong password
